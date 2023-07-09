@@ -1,13 +1,12 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Install VS Components'
+description: 'Installs the VS component(s) specified.'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  components:  # id of input
+    description: 'Component(s) to install, seperated by only a comma.'
     required: true
-    default: 'World'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  success:
+    description: 'Whether the installation succeeded on all components, true or false.'
 runs:
   using: 'node16'
   main: 'index.js'

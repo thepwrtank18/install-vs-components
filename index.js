@@ -1,15 +1,26 @@
 const core = require('@actions/core');
-const github = require('@actions/github');
+const exec = require('@actions/exec');
 
 try {
-  // `who-to-greet` input defined in action metadata file
-  const nameToGreet = core.getInput('who-to-greet');
-  console.log(`Hello ${nameToGreet}!`);
-  const time = (new Date()).toTimeString();
-  core.setOutput("time", time);
-  // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload: ${payload}`);
+
+  const componentArray = core.getInput("components").split(",");
+  let argumentArray = [];
+
+  argumentArray.push("/c", 
+  "C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\vs_installer.exe", 
+  "modify", "--installPath", 
+  "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise");
+
+  componentArray.forEach(element => {
+    console.log(`Adding ${element} to array...`);
+    argumentArray.push("--add", element);
+  });
+
+  argumentArray.push("--quiet", "--norestart", "--nocache", "--wait");
+
+  console.log("Launching installer. This will take a while, and there's no output.");
+  exec.exec("C:\\Windows\\System32\\cmd.exe", argumentArray);
+  core.setOutput("success", true);
 } catch (error) {
   core.setFailed(error.message);
 }
