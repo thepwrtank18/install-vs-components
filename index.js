@@ -16,7 +16,7 @@ try {
   argumentArray.push("--quiet", "--norestart", "--nocache", "--wait");
 
   console.log("Launching installer. This will take a while, and there's no output.");
-  exec.exec("C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\", argumentArray);
+  exec.exec("C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\vs_installer.exe", argumentArray);
   core.setOutput("success", true);
 } catch (error) {
   core.setFailed(error.message);
