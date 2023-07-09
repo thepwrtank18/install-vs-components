@@ -19,6 +19,7 @@
   "homepage": "https://github.com/thepwrtank18/install-vs-components#readme",
   "dependencies": {
     "@actions/core": "^1.6.0",
+    "@actions/exec": "^1.1.1",
     "@actions/github": "^5.0.1"
   }
 }
