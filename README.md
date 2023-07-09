@@ -19,5 +19,5 @@ Whether it is successful or not, bring true or false. It should throw an excepti
 ```yaml
 uses: thepwrtank18/install-vs-components
 with:
-  components: Microsoft.VisualStudio.Component.WinXP,Microsoft.Net.Component.4.6.2.TargetingPack'
+  components: Microsoft.VisualStudio.Component.WinXP,Microsoft.Net.Component.4.6.2.TargetingPack
 ```
