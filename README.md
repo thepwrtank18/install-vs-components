@@ -1,23 +1,23 @@
-# Hello world JavaScript action
+# Install VS Components
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log. To learn how this action was built, see "[Creating a JavaScript action](https://help.github.com/en/articles/creating-a-javascript-action)" in the GitHub Help documentation.
+This action installs the component(s) specified into Visual Studio for that run.
 
 ## Inputs
 
-### `who-to-greet`
+### `components`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** The component(s) to be installed, seperated by only a comma.
 
 ## Outputs
 
-### `time`
+### `success`
 
-The time we greeted you.
+Whether it is successful or not, bring true or false. It should throw an exception anyway if it's not successful.
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-javascript-action@main
+uses: thepwrtank18/install-vs-components
 with:
-  who-to-greet: 'Mona the Octocat'
+  components: Microsoft.VisualStudio.Component.WinXP,Microsoft.Net.Component.4.6.2.TargetingPack'
 ```
