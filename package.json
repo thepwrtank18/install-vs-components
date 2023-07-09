@@ -1,6 +1,6 @@
 {
   "name": "install-vs-components",
-  "version": "1.0.0-beta6",
+  "version": "1.0.0",
   "description": "Installs the VS component(s) specified.",
   "main": "index.js",
   "scripts": {
