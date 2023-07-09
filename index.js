@@ -6,10 +6,7 @@ try {
   const componentArray = core.getInput("components").split(",");
   let argumentArray = [];
 
-  argumentArray.push("/c", 
-  "C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\vs_installer.exe", 
-  "modify", "--installPath", 
-  "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise");
+  argumentArray.push("modify", "--installPath", "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise");
 
   componentArray.forEach(element => {
     console.log(`Adding ${element} to array...`);
@@ -19,7 +16,7 @@ try {
   argumentArray.push("--quiet", "--norestart", "--nocache", "--wait");
 
   console.log("Launching installer. This will take a while, and there's no output.");
-  exec.exec("C:\\Windows\\System32\\cmd.exe", argumentArray);
+  exec.exec("C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\", argumentArray);
   core.setOutput("success", true);
 } catch (error) {
   core.setFailed(error.message);
