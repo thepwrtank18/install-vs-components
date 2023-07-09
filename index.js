@@ -13,7 +13,7 @@ try {
     argumentArray.push("--add", element);
   });
 
-  argumentArray.push("--quiet", "--norestart", "--nocache", "--wait");
+  argumentArray.push("--quiet", "--norestart", "--nocache");
 
   console.log("Launching installer. This will take a while, and there's no output.");
   exec.exec("\"C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\vs_installer.exe\"", argumentArray);
