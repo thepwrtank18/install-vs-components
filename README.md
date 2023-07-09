@@ -17,7 +17,7 @@ Whether it is successful or not, bring true or false. It should throw an excepti
 ## Example usage
 
 ```yaml
-uses: thepwrtank18/install-vs-components
+uses: thepwrtank18/install-vs-components@v1
 with:
   components: Microsoft.VisualStudio.Component.WinXP,Microsoft.Net.Component.4.6.2.TargetingPack
 ```
