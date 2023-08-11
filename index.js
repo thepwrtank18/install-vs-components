@@ -27,3 +27,5 @@ const installComponents = () => {
         }
       }     
 }
+
+installComponents();
